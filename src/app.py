@@ -5,13 +5,21 @@ import random
 import time
 import uuid
 from datetime import datetime, timezone
+from pathlib import Path
 
 from azure.storage.blob import BlobServiceClient
 from dotenv import load_dotenv
 
 load_dotenv()
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler("prescriptions.log", encoding="utf-8"),
+    ],
+)
 
 PATIENTS = [
     "Ana Silva",
@@ -77,10 +85,10 @@ def generate_prescription():
     selected_meds = random.sample(MEDICATIONS, num_meds)
     return {
         "prescription_id": str(uuid.uuid4()),
-        "issue_date": datetime.now(timezone.utc).isoformat() + "Z",
+        "issue_date": datetime.now(timezone.utc).isoformat(),
         "patient": {
-            "full_name": random.choice(PATIENTS),
-            "patient_id": random.randint(100, 999),
+            "name": random.choice(PATIENTS),
+            "id": random.randint(100, 999),
         },
         "medications": [
             {
@@ -93,15 +101,26 @@ def generate_prescription():
     }
 
 
+LOCAL_DIR = Path("medical_prescriptions")
+
+
 def upload_prescription(blob_service_client, container_name, prescription_data):
     prescrition_id = prescription_data["prescription_id"]
     file_name = (
         f"prescription_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{prescrition_id}.json"
     )
+    json_content = json.dumps(prescription_data, indent=2)
+
+    # Upload to blob
     blob_client = blob_service_client.get_blob_client(
         container=container_name, blob=file_name
     )
-    blob_client.upload_blob(json.dumps(prescription_data, indent=2), overwrite=True)
+    blob_client.upload_blob(json_content, overwrite=True)
+
+    # Save locally
+    LOCAL_DIR.mkdir(exist_ok=True)
+    (LOCAL_DIR / file_name).write_text(json_content, encoding="utf-8")
+
     return file_name
 
 

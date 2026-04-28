@@ -5,3 +5,5 @@
 .ruff_cache
 __pycache__/
 .python_packages
+*.log
+medical_prescriptions/
