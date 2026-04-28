@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDatabase",
+    "displayName": "eh_prescriptions_realtime",
+    "description": "eh_prescriptions_realtime"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f04a1d33-4b52-bb98-432a-0e86385ffca8"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "917c3ef6-1c8a-4217-936c-b0bef4dee67d",
+        "clusterUri": "https://trd-9pwauwbetvdtyunkes.z6.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "385ffca8-0e86-432a-bb98-4b52f04a1d33",
+        "databaseItemName": "eh_prescriptions_realtime"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "48e70fbc-1b58-4274-87a1-ee7d2952a5bd",
+        "content": ".alter table prescriptions_exploded policy update\n@'[{\"Source\": \"prescriptions_raw\", \"Query\": \"prescriptions_raw | mv-expand med = payload.medications | project prescription_id = tostring(payload.prescription_id), issue_date = todatetime(payload.issue_date), patient_name = tostring(payload.patient.name), patient_id = toint(payload.patient.id), medication_name = tostring(med.name), medication_dosage = tostring(med.dosage), medication_frequency = tostring(med.frequency)\", \"IsEnabled\": true, \"IsTransactional\": false, \"PropagateIngestionProperties\": false}]'\n",
+        "title": "Tab",
+        "dataSourceId": "917c3ef6-1c8a-4217-936c-b0bef4dee67d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "id": "f475db37-ef0c-4548-9e45-9e10783ee91f",
+      "name": "EventLinks",
+      "type": "AzureBlobStorageEvents",
+      "properties": {
+        "azureBlobStorageEvents": [
+          {
+            "id": "a99cf257-3a24-431a-b2bf-9ad12b71ef73",
+            "azureResourceId": "/subscriptions/2cdba4d9-d348-47d1-92cb-cbe2f0b4162f/resourcegroups/MicrosoftFabricDevelopment/providers/microsoft.storage/storageaccounts/pezzottmvp",
+            "includedEventTypes": [
+              "Microsoft.Storage.BlobCreated"
+            ]
+          }
+        ],
+        "streamEvents": true
+      }
+    }
+  ],
+  "destinations": [],
+  "streams": [
+    {
+      "id": "a45c15bc-fa72-4772-a7cd-6bda48f60905",
+      "name": "pezzottmvp_eventstream-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "EventLinks"
+        }
+      ]
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.1"
+}
