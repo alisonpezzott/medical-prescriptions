@@ -77,7 +77,7 @@ FREQUENCIES = [
     "As needed",
 ]
 
-INTERVAL_SECONDS = 10
+INTERVAL_SECONDS = 3
 
 
 def generate_prescription():
@@ -109,7 +109,7 @@ def upload_prescription(blob_service_client, container_name, prescription_data):
     file_name = (
         f"prescription_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{prescrition_id}.json"
     )
-    json_content = json.dumps(prescription_data, indent=2)
+    json_content = json.dumps(prescription_data, indent=2, ensure_ascii=False)
 
     # Upload to blob
     blob_client = blob_service_client.get_blob_client(
