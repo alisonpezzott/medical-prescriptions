@@ -1,0 +1,134 @@
+{
+  "schema_version": 74,
+  "autoRefresh": {
+    "enabled": true,
+    "defaultInterval": "1s"
+  },
+  "tiles": [
+    {
+      "id": "0631896f-e97b-46cd-a0e8-9698b4b0ca1b",
+      "queryRef": {
+        "kind": "query",
+        "queryId": "7ede09db-fd32-4693-80ce-4f63eca91140"
+      },
+      "title": "prescriptions_exploded Table Preview",
+      "visualType": "table",
+      "pageId": "a4563a53-1795-4921-83a8-23fdbd41ce76",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 24,
+        "height": 9
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "crossFilter": [],
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "c874c78f-eb00-4cc4-a98a-0bc5c4826d92",
+      "title": "New tile",
+      "visualType": "table",
+      "pageId": "a4563a53-1795-4921-83a8-23fdbd41ce76",
+      "layout": {
+        "x": 0,
+        "y": 9,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "9d9b9975-79eb-4acb-9d79-42227c4c2609"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "crossFilter": [],
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    }
+  ],
+  "baseQueries": [
+    {
+      "id": "6b9ad3e5-27af-4d7f-9a5b-28b81ee9f809",
+      "queryId": "1cf5475b-0609-4f0a-9908-f7d9ab3b7ffb",
+      "variableName": "prescriptions_count"
+    }
+  ],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "515c3321-40d2-4135-98c3-ec232af2d3b1",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "dff378a1-bd6b-4f9a-9411-20ac339a1eec",
+      "kind": "kusto-trident",
+      "clusterUri": "",
+      "databaseArtifactId": "7d6a36e6-c6b0-43a7-95d6-524639268c6b",
+      "database": "39268c6b-5246-95d6-43a7-c6b07d6a36e6",
+      "workspace": "00000000-0000-0000-0000-000000000000",
+      "name": "eh_medical_prescriptions"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "a4563a53-1795-4921-83a8-23fdbd41ce76"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "dff378a1-bd6b-4f9a-9411-20ac339a1eec"
+      },
+      "text": "['prescriptions_exploded']",
+      "id": "7ede09db-fd32-4693-80ce-4f63eca91140",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "dff378a1-bd6b-4f9a-9411-20ac339a1eec"
+      },
+      "text": "prescriptions_count",
+      "id": "9d9b9975-79eb-4acb-9d79-42227c4c2609",
+      "usedVariables": [
+        "prescriptions_count"
+      ]
+    },
+    {
+      "id": "1cf5475b-0609-4f0a-9908-f7d9ab3b7ffb",
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "dff378a1-bd6b-4f9a-9411-20ac339a1eec"
+      },
+      "text": "// Please enter your KQL query (Example):\nprescriptions_raw\n | count",
+      "usedVariables": []
+    }
+  ]
+}

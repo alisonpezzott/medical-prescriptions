@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventhouse",
+    "displayName": "eh_medical_prescriptions",
+    "description": "eh_medical_prescriptions"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "38fcea33-6c26-ab07-42f0-50a970b9de1d"
+  }
+}

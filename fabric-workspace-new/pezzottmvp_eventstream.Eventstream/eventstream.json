@@ -1,0 +1,25 @@
+{
+  "sources": [
+    {
+      "id": "00000000-0000-0000-0000-000000000000",
+      "name": "AzureBlobStorageEvents",
+      "type": "AzureBlobStorageEvents",
+      "properties": {
+        "azureBlobStorageEvents": [
+          {
+            "id": "73692920-e68b-436c-a196-a7bf3940d1d0",
+            "azureResourceId": "/subscriptions/2cdba4d9-d348-47d1-92cb-cbe2f0b4162f/resourcegroups/MicrosoftFabricDevelopment/providers/microsoft.storage/storageaccounts/pezzottmvp",
+            "includedEventTypes": [
+              "Microsoft.Storage.BlobCreated"
+            ]
+          }
+        ],
+        "streamEvents": false
+      }
+    }
+  ],
+  "destinations": [],
+  "streams": [],
+  "operators": [],
+  "compatibilityLevel": "1.1"
+}

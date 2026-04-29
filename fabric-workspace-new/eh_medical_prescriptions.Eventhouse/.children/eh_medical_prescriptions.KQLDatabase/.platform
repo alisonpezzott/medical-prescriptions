@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDatabase",
+    "displayName": "eh_medical_prescriptions",
+    "description": "eh_medical_prescriptions"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "39268c6b-5246-95d6-43a7-c6b07d6a36e6"
+  }
+}
