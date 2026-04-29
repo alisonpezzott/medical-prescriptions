@@ -13,7 +13,7 @@
 # META       "default_lakehouse_workspace_id": "76d469df-375e-4be1-931e-72eb81797419",
 # META       "known_lakehouses": [
 # META         {
-# META           "id": "00000000-0000-0000-0000-000000000000",
+# META           "id": "00000000-0000-0000-0000-000000000000"
 # META         }
 # META       ]
 # META     }
