@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Eventstream",
-    "displayName": "pezzottmvp_eventstream",
-    "description": "pezzottmvp_eventstream"
+    "type": "Notebook",
+    "displayName": "nb_json_to_delta",
+    "description": "New notebook"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "c6511996-ecd2-8041-4ff6-a1c25dd3a2ce"
+    "logicalId": "a1c6906f-5913-9051-446a-f3f201539360"
   }
 }

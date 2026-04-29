@@ -1,0 +1,14 @@
+[
+  {
+    "name": "medical-prescriptions",
+    "path": "/Files",
+    "target": {
+      "type": "AzureBlobStorage",
+      "azureBlobStorage": {
+        "connectionId": "a5dcbf9b-c02f-430e-8bc5-b5c579ff5357",
+        "location": "https://pezzottmvp.blob.core.windows.net",
+        "subpath": "/medical-prescriptions"
+      }
+    }
+  }
+]

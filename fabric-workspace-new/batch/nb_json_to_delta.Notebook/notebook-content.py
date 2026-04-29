@@ -8,12 +8,12 @@
 # META   },
 # META   "dependencies": {
 # META     "lakehouse": {
-# META       "default_lakehouse": "bbbaff97-36ef-4f05-954f-ca7584c86525",
+# META       "default_lakehouse": "00000000-0000-0000-0000-000000000000",
 # META       "default_lakehouse_name": "lh_medical_prescriptions",
-# META       "default_lakehouse_workspace_id": "0029f683-4d47-4dee-8d97-d14ac0e7205e",
+# META       "default_lakehouse_workspace_id": "76d469df-375e-4be1-931e-72eb81797419",
 # META       "known_lakehouses": [
 # META         {
-# META           "id": "bbbaff97-36ef-4f05-954f-ca7584c86525"
+# META           "id": "00000000-0000-0000-0000-000000000000",
 # META         }
 # META       ]
 # META     }
